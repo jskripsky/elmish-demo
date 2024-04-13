@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "engines": {
+    "node": "~18 || ~20",
+    "npm": "~9 || ~10"
+  },
+  "scripts": {
+    "postinstall": "dotnet tool restore",
+    "start": "cd App; dotnet fable watch --verbose  -o output -s --run npx vite --host",
+    "clean": "cd App; dotnet fable clean --yes"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "daisyui": "^4.10.1",
+    "postcss": "^8.4.38",
+    "remotedev": "^0.2.9",
+    "sass": "^1.75.0",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.8"
+  }
+}
