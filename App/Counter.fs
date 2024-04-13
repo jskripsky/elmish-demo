@@ -35,14 +35,14 @@ let render (s: State) (dispatch: Msg -> unit): ReactElement =
         ]
 
     Daisy.card [
-        prop.className "card-bordered card-compact bg-base-100 shadow-xl w-48"
+        prop.className "card-bordered card-compact bg-base-100 shadow-xl w-60"
 
         prop.children [
             Daisy.cardBody [
                 Daisy.cardTitle "Counter"
 
                 Html.div [
-                    prop.className "flex gap-3 items-center space-between"
+                    prop.className "flex gap-3 items-center"
                     prop.children [
                         button "-" Decrement
 
