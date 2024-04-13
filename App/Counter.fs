@@ -71,18 +71,3 @@ let render (s: State) (dispatch: Msg -> unit): ReactElement =
             ]
         ]
     ]
-
-(*
-let renderButton label msg =
-    Html.button [
-        prop.text label
-        prop.onClick (fun _ -> dispatch msg)
-    ]
-
-let render (s: State) =
-    Html.div [
-        renderButton "-" Decrement
-        Html.text (string s.Counter)
-        renderButton "+" Increment
-    ]
-*)
