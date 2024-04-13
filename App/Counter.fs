@@ -43,7 +43,7 @@ let render (s: State) (dispatch: Msg -> unit): ReactElement =
 
                         Daisy.badge [
                             prop.className "w-12 badge-lg badge-secondary"
-                            prop.text $" {s.Counter} "
+                            prop.text (string s.Counter)
                         ]
 
                         Daisy.button.button [
