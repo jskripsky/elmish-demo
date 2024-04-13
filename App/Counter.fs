@@ -60,7 +60,7 @@ let render (s: State) (dispatch: Msg -> unit): ReactElement =
                     prop.className "input-bordered"
                     prop.type' "text"
                     prop.valueOrDefault s.Name
-                    prop.onTextChange (fun name -> dispatch (ChangeName name))
+                    prop.onTextChange (ChangeName >> dispatch)
                 ]
 
                 for _ in [1..s.Counter] do
