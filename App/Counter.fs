@@ -3,8 +3,6 @@ module Elmish.Demo.Counter
 open Feliz
 open Feliz.DaisyUI
 
-type View = ReactElement
-
 // The state of our app
 // (type with multiple fields)
 type State = {
@@ -27,7 +25,7 @@ let update (msg: Msg) (s: State): State =
     | Increment -> { s with Counter = s.Counter + 1 }
     | Decrement -> { s with Counter = s.Counter - 1 }
 
-let render (s: State) (dispatch: Msg -> unit): View =
+let render (s: State) (dispatch: Msg -> unit): ReactElement =
     Daisy.card [
         prop.className "card-bordered card-compact bg-base-100 shadow-xl w-48"
 
@@ -36,7 +34,7 @@ let render (s: State) (dispatch: Msg -> unit): View =
                 Daisy.cardTitle "Counter"
 
                 Html.div [
-                    prop.className "flex gap-2 items-center space-between"
+                    prop.className "flex gap-3 items-center space-between"
                     prop.children [
                         Daisy.button.button [
                             prop.text "-"
@@ -44,7 +42,7 @@ let render (s: State) (dispatch: Msg -> unit): View =
                         ]
 
                         Daisy.badge [
-                            prop.className "w-12 badge-secondary"
+                            prop.className "w-12 badge-lg badge-secondary"
                             prop.text $" {s.Counter} "
                         ]
 
