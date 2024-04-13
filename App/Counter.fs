@@ -29,6 +29,12 @@ let update (msg: Msg) (s: State): State =
     | ChangeName name -> { s with Name = name }
 
 let render (s: State) (dispatch: Msg -> unit): ReactElement =
+    let button (label: string) msg =
+        Daisy.button.button [
+            prop.text label
+            prop.onClick (fun _ -> dispatch msg)
+        ]
+
     Daisy.card [
         prop.className "card-bordered card-compact bg-base-100 shadow-xl w-48"
 
@@ -39,20 +45,14 @@ let render (s: State) (dispatch: Msg -> unit): ReactElement =
                 Html.div [
                     prop.className "flex gap-3 items-center space-between"
                     prop.children [
-                        Daisy.button.button [
-                            prop.text "-"
-                            prop.onClick (fun _ -> dispatch Decrement)
-                        ]
+                        button "-" Decrement
 
                         Daisy.badge [
                             prop.className "w-12 badge-lg badge-secondary"
                             prop.text (string s.Counter)
                         ]
 
-                        Daisy.button.button [
-                            prop.text "+"
-                            prop.onClick (fun _ -> dispatch Increment)
-                        ]
+                        button "+" Increment
                     ]
                 ]
 
