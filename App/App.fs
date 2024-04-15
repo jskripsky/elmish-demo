@@ -5,9 +5,14 @@ open Elmish
 open Elmish.Debug
 open Elmish.HMR
 
+open Demo.WebUI.History
+
 JsInterop.importSideEffects "./index.css"
 
-Program.mkSimple Counter.init Counter.update Counter.render
+Program.mkSimple
+    (Update.init Counter.init)
+    (Update.update Counter.update )
+    (View.render Counter.render)
 |> Program.withReactSynchronous "app"
 |> Program.withConsoleTrace
 |> Program.withDebugger

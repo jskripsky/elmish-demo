@@ -39,7 +39,7 @@ let render (s: State) (dispatch: Msg -> unit): ReactElement =
 
         prop.children [
             Daisy.cardBody [
-                Daisy.cardTitle "Counter"
+                Daisy.cardTitle "Counter Plus"
 
                 Html.div [
                     prop.className "flex gap-3 items-center"

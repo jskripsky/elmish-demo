@@ -4,7 +4,7 @@ namespace Demo.WebUI.History
 type Index = int
 
 /// All time travel commands the user can issue
-type TimeTravelCommand =
+type TimeTravel =
     | Undo
     | Redo
     | JumpTo of Index // direct jump to given point in the history
@@ -13,7 +13,7 @@ type TimeTravelCommand =
 /// We support time travel commands.
 /// And we must support all messages of the wrapped inner message type.
 type Msg<'M> =
-    | TimeTravelCommand of TimeTravelCommand
+    | TimeTravel of TimeTravel
     | InnerMsg of 'M
 
 /// Full History State

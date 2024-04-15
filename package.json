@@ -6,7 +6,7 @@
   },
   "scripts": {
     "postinstall": "dotnet tool restore",
-    "start": "cd App; dotnet fable watch -o output -s --run npx vite --host",
+    "start": "cd App; dotnet fable watch --verbose -o output -s --run npx vite --host",
     "clean": "cd App; dotnet fable clean --yes"
   },
   "dependencies": {

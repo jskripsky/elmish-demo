@@ -14,7 +14,7 @@ let render renderToWrap (state: State<_>) dispatch =
     // wrap the inner view element in a HTML div
     Html.div [
         // render the history control panel at the top
-        Panel.renderHistoryPanel length current (TimeTravelCommand >> dispatch)
+        Panel.renderHistoryPanel length current (TimeTravel >> dispatch)
 
         // generate the wrapped inner view
         renderToWrap innerState (InnerMsg >> dispatch)
